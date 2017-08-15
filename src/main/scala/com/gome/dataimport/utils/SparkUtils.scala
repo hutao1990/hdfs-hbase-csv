@@ -13,7 +13,7 @@ object SparkUtils {
 
   def createSparkContext(confMap: Map[String, String], appName: String): SparkContext = {
     val conf = new SparkConf().setAppName(appName)
-    if (isWin) conf.setMaster("local[1]")
+    if (isWin) conf.setMaster("local[2]")
     for ((k, v) <- confMap) {
       conf.set(k, v)
     }

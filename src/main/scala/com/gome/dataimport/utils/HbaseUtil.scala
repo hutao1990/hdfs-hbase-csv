@@ -319,7 +319,7 @@ object HbaseUtil {
     val conn = createHConnection()
     val start = new Date().getTime
     //    println(parseResults(scanWithStartEndRow(conn,"iUserHistorySku","9951419735_0","9951419735_9")))
-    println(parseResults(scanWithPrefix(conn, "iUserHistorySku", "72006457599_")))
+    println(parseResults(scanWithPrefix(conn, "spatopic800-MD005", "1001,A003")))
     val end = new Date().getTime
     println(end - start + "ms")
   }
