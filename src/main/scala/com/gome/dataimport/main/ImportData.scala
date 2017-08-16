@@ -49,7 +49,7 @@ object ImportData {
 
     //生成最终DF
     val results: DataFrame = sqlContext.sql("select " + args(4) + " as key," + columns.mkString(",") + ",from_unixtime(unix_timestamp(),'yyyy-MM-dd HH:mm:ss.SSS') as CURRENT_TS from tempTable")
-
+    results.show(1,truncate = false)
     //插入HBASE
     results.foreachPartition(partition => {
       val connection: Connection = HbaseUtil.createHConnection()
